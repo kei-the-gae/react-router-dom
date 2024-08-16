@@ -19,6 +19,11 @@ const App = () => {
   const { pokemonId } = useParams();
   // console.log('pokemonId: ', pokemonId);
 
+  const addPokemon = (newPokemonData) => {
+    newPokemonData._id = pokemon.length + 1;
+    setPokemon([...pokemon, newPokemonData]);
+  };
+
   return (
     <>
       <NavBar />
@@ -27,7 +32,7 @@ const App = () => {
         <Route path='/' element={<h2>Home Page</h2>} />
         <Route path='/pokemon' element={<PokemonList pokemon={pokemon} />} />
         <Route path='/pokemon/:pokemonId' element={<PokemonDetails pokemon={pokemon} />} />
-        <Route path='/pokemon/new' element={<PokemonForm />} />
+        <Route path='/pokemon/new' element={<PokemonForm addPokemon={addPokemon} />} />
         <Route path='*' element={<h2>Whoops, nothing here!</h2>} />
       </Routes>
     </>
