@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PokemonList from './components/PokemonList';
 import NavBar from './components/NavBar';
 import PokemonDetails from './components/PokemonDetails';
@@ -14,6 +15,9 @@ const initialState = [
 
 const App = () => {
   const [pokemon, setPokemon] = useState(initialState);
+  const { pokemonId } = useParams();
+  // console.log('pokemonId: ', pokemonId);
+
   return (
     <>
       <NavBar />
