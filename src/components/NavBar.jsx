@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const NavBar = () => {
     return (
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Pokemon</li>
+                <Link to='/'>Home</Link>
+                <Link to='/pokemon'>Pokemon</Link>
             </ul>
         </nav>
     );
