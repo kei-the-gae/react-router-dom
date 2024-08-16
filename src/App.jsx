@@ -20,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<h2>Home Page</h2>} />
         <Route path='/pokemon' element={<PokemonList pokemon={pokemon} />} />
+        <Route path='*' element={<h2>Whoops, nothing here!</h2>} />
       </Routes>
     </>
   );
